@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Richard Denton -- Lead developer -- @richard_ddenton
+	Lauchlan Craig -- Original branding
+
+# THANKS
+	
+	W3C, css-tricks.com / Chris Coyier
+
+# TECHNOLOGY COLOPHON
+	
+	HTML5, CSS3, Normalize.css, jQuery, Respond.js, SASS,
+	Google fonts, GIMP, Inkscape, Geany IDE, Sublime Text 2,
+	Wordpress, PrettyPress, JetPack

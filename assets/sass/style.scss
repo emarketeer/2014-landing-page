@@ -1,0 +1,304 @@
+$grey: #454545;
+$darkgrey: #333;
+$white: #fafafa;
+$red: #d72c30;
+$lightred: #DD3332;
+$darkred: #C52D2C;
+$lightblue: #3287DD;
+$darkblue: #2C78C5;
+
+@mixin fontface-ubuntu($weight) {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: $weight;
+}
+
+@mixin borderradius($size) {
+	-moz-border-radius:  $size;
+	-webkit-border-radius:  $size;
+	border-radius:  $size;
+}
+
+@mixin gradient-background($start,$end) {
+	background: $end;
+	background-image: -ms-linear-gradient(top, $start 0%, $end 100%);
+	background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
+	background-image: -o-linear-gradient(top, $start 0%, $end 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $start), color-stop(1, $end));
+	background-image: -webkit-linear-gradient(top, $start 0%, $end 100%);
+	background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+}
+
+@mixin borderbox() {
+	-moz-box-sizing:  border-box;
+	-webkit-box-sizing:  border-box;
+	box-sizing:  border-box;
+}
+
+body {
+	margin: 0;
+	@include fontface-ubuntu(300);
+	color: $grey;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: 300;
+	margin: 0;
+}
+
+.primary-header {
+	width: 100%;
+	min-width: 1000px;
+	height: 50px;
+	color: $white;
+	@include gradient-background($grey,$darkgrey);
+	
+	h2 {
+		font-size: 16px;
+		line-height: 50px;
+	}
+	
+}
+
+.arrow-block {
+	position:  absolute;
+	background:  url("../img/arrow-up-right.png") right top no-repeat;
+	width:  50px;
+	height:  63px;
+	margin-left:  470px;
+	margin-top:  -80px;
+}
+
+.content-break {
+	margin-top:  80px;
+	height:  32px;
+	background:  url("../img/content-break.png") center center no-repeat;
+}
+
+.content-after-break {
+	padding:  60px 0 0 0!important;
+}
+
+.content-block {
+	padding: 100px 0 0px 0;
+	
+	.headline {
+		
+		h1 {
+			font-size: 52px;
+			line-height: 65px;
+		}
+		
+		p {
+			font-size: 22px;
+		}
+	}
+	
+	.why-emarketeer {
+		h2 {
+			font-size: 34px;
+			line-height: 44px;
+			text-align:  right;
+		}
+	}
+	
+	.arrow-down {
+		margin:  20px 0;
+		width:  100%;
+		height:  63px;
+		background:  url("../img/arrow-down-left.png") 600px center no-repeat;
+	}
+	
+	.more-clients {
+		text-align:  center;
+		margin:  20px 0 80px 0;
+		
+		h3 {
+			font-size: 34px;
+			margin-bottom:  1em;
+		}
+	}
+	
+	.testimonials {
+		
+		
+		.testimonial-wrapper {
+			margin-top:  50px;
+			height:  215px;
+			overflow:  hidden;
+		}
+		
+		.testimonial {
+			img {
+				@include borderradius(20px);
+			}
+			
+			.description {
+				text-align:  right;
+				font-size:  20px;
+				
+				blockquote {
+					margin:  0;
+					padding-left:  40px;
+					font-style:  italic;
+				}
+				
+			}
+		}
+		
+		.testimonial-control {
+			
+			text-align:  right;
+			
+			a {
+				color:  $grey;
+				text-decoration: none;
+				font-size:  58px;
+			}
+			
+			a.active {
+				color:  $red;
+			}
+			
+		}
+	}
+	
+	.optin-info {
+		
+		h2 {
+			font-size: 34px;
+			line-height: 44px;
+		}
+		
+		p.small {
+			font-size: 14px;
+		}
+		
+		ul {
+			margin: 1em 0;
+			padding:  0;
+			font-size:  20px;
+			
+			li {
+				list-style-type:  none;
+				line-height:  45px;
+				padding-left:  60px;
+				background:  url("../img/red-tick.png") left top no-repeat;
+			}
+		}
+		
+		.sidebar-triangle {
+			position:  absolute;
+			width:  0;
+			height:  0;
+			border-top:  20px solid transparent;
+			border-bottom:  20px solid transparent;
+			border-right:  20px solid $grey;
+			z-index:  -1;
+			margin-left:  -20px;
+			margin-top:  70px;
+		}
+		
+		.sidebar-form {
+			@include gradient-background($grey,$darkgrey);
+			@include borderbox();
+			@include borderradius(10px);
+			padding:  25px;
+			color:  $white;
+			
+			.row {
+				margin-bottom:  1.5em;
+			}
+			
+			.row:last-of-type {
+				margin-bottom:  0;
+			}
+			
+			.col-half {
+				width:  46.5%;
+				margin-right:  6%;
+			}
+			
+			input, textarea {
+				background:  #222;
+				border-style:  none;
+				padding:  1em;
+				@include borderbox();
+				display:  block;
+				width:  100%;
+				@include fontface-ubuntu(300);
+				font-size:  16px;
+				color:  $white;
+			}
+			
+			textarea {
+				height:  160px;
+				resize: none;
+			}
+			
+			input.form-submit {
+				@include gradient-background($lightred,$darkred);
+				font-size:  18px;
+				padding: 0.8em;
+			}
+			
+			input.form-submit:hover {
+				@include gradient-background($lightblue,$darkblue);
+			}
+			
+		}
+		
+	}
+	
+}
+
+strong, b {
+	font-weight:  400!important;
+}
+
+.red {
+	color: $red;
+}
+
+.col {
+	float: left;
+}
+
+.col-half {
+	width: 47%;
+	margin-right: 3%;
+}
+
+.col-quarter {
+	width:  22%;
+	margin-right:  3%;
+}
+
+.col-three-quarters {
+	width:  73%;
+	margin-left:  2%;
+}
+
+.col-last, .col:last-of-type {
+	margin-right:  0!important;
+}
+
+.col-logo {
+	width: 32%;
+	padding-left: 1%;
+}
+
+.col-two-thirds {
+	width: 66%;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.row:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
