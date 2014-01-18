@@ -34,6 +34,36 @@ $darkblue: #2C78C5;
 	box-sizing:  border-box;
 }
 
+@mixin contactform() {
+	
+	input, textarea {
+		background:  #222;
+		border-style:  none;
+		padding:  1em;
+		@include borderbox();
+		display:  block;
+		width:  100%;
+		@include fontface-ubuntu(300);
+		font-size:  16px;
+		color:  $white;
+	}
+	
+	textarea {
+		height:  160px;
+		resize: none;
+	}
+	
+	input.form-submit {
+		@include gradient-background($lightred,$darkred);
+		font-size:  18px;
+		padding: 0.8em;
+	}
+	
+	input.form-submit:hover {
+		@include gradient-background($lightblue,$darkblue);
+	}
+}
+
 body {
 	margin: 0;
 	@include fontface-ubuntu(300);
@@ -78,8 +108,33 @@ h1, h2, h3, h4, h5 {
 	padding:  60px 0 0 0!important;
 }
 
+
+.content-contact {
+	@include gradient-background($grey,$darkgrey);
+	color:  $white;
+	padding:  80px 0!important;
+}
+
 .content-block {
 	padding: 100px 0 0px 0;
+	
+	.contact {
+		h2 {
+			font-size:  32px;
+		}
+		
+		@include contactform();
+		
+		.sidebar-form {
+			margin-top:  40px;
+			
+			.col-half {
+				width:  48.4%;
+				margin-right:  3%;
+			}
+		}
+	}
+	
 	
 	.headline {
 		
@@ -205,45 +260,7 @@ h1, h2, h3, h4, h5 {
 			padding:  25px;
 			color:  $white;
 			
-			.row {
-				margin-bottom:  1.5em;
-			}
-			
-			.row:last-of-type {
-				margin-bottom:  0;
-			}
-			
-			.col-half {
-				width:  46.5%;
-				margin-right:  6%;
-			}
-			
-			input, textarea {
-				background:  #222;
-				border-style:  none;
-				padding:  1em;
-				@include borderbox();
-				display:  block;
-				width:  100%;
-				@include fontface-ubuntu(300);
-				font-size:  16px;
-				color:  $white;
-			}
-			
-			textarea {
-				height:  160px;
-				resize: none;
-			}
-			
-			input.form-submit {
-				@include gradient-background($lightred,$darkred);
-				font-size:  18px;
-				padding: 0.8em;
-			}
-			
-			input.form-submit:hover {
-				@include gradient-background($lightblue,$darkblue);
-			}
+			@include contactform();
 			
 		}
 		
@@ -255,6 +272,15 @@ strong, b {
 	font-weight:  400!important;
 }
 
+.row {
+	margin-bottom:  1.5em;
+}
+			
+.row:last-of-type {
+	margin-bottom:  0;
+}
+
+
 .red {
 	color: $red;
 }
@@ -265,7 +291,7 @@ strong, b {
 
 .col-half {
 	width: 47%;
-	margin-right: 3%;
+	margin-right: 6%;
 }
 
 .col-quarter {
