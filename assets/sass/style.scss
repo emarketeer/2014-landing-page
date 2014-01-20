@@ -1,68 +1,4 @@
-$grey: #454545;
-$darkgrey: #333;
-$white: #fafafa;
-$red: #d72c30;
-$lightred: #DD3332;
-$darkred: #C52D2C;
-$lightblue: #3287DD;
-$darkblue: #2C78C5;
-
-@mixin fontface-ubuntu($weight) {
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: $weight;
-}
-
-@mixin borderradius($size) {
-	-moz-border-radius:  $size;
-	-webkit-border-radius:  $size;
-	border-radius:  $size;
-}
-
-@mixin gradient-background($start,$end) {
-	background: $end;
-	background-image: -ms-linear-gradient(top, $start 0%, $end 100%);
-	background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
-	background-image: -o-linear-gradient(top, $start 0%, $end 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $start), color-stop(1, $end));
-	background-image: -webkit-linear-gradient(top, $start 0%, $end 100%);
-	background-image: linear-gradient(to bottom, $start 0%, $end 100%);
-}
-
-@mixin borderbox() {
-	-moz-box-sizing:  border-box;
-	-webkit-box-sizing:  border-box;
-	box-sizing:  border-box;
-}
-
-@mixin contactform() {
-	
-	input, textarea {
-		background:  #222;
-		border-style:  none;
-		padding:  1em;
-		@include borderbox();
-		display:  block;
-		width:  100%;
-		@include fontface-ubuntu(300);
-		font-size:  16px;
-		color:  $white;
-	}
-	
-	textarea {
-		height:  160px;
-		resize: none;
-	}
-	
-	input.form-submit {
-		@include gradient-background($lightred,$darkred);
-		font-size:  18px;
-		padding: 0.8em;
-	}
-	
-	input.form-submit:hover {
-		@include gradient-background($lightblue,$darkblue);
-	}
-}
+@import "global";
 
 body {
 	margin: 0;
@@ -125,9 +61,36 @@ h1, h2, h3, h4, h5 {
 	
 	.primary-footer {
 		margin:  4em 0 0 0;
-		font-size:  11px;
-		color:  #aaa;
-		text-align:  center;
+		
+		line-height:  24px;
+		
+		
+		.copyright {
+			font-size:  11px;
+			color:  #aaa;
+		}
+		
+		.col-three-quarters {
+			@include borderbox();
+			padding-right:  4em;
+		}
+		
+		ul.social {
+			margin:  1em 0 0 0;
+			padding:  0;
+			
+			li {
+				display:  inline-block;
+				list-style-type:  none;
+				width:  32px;
+				height:  32px;
+				margin-right:  9px;	
+			}
+			
+			li:last-of-type, li.last {
+				margin-right:  0!important;
+			}
+		}
 	}
 }
 
@@ -343,4 +306,32 @@ strong, b {
 	width: 960px;
 	margin: 0 auto;
 	padding: 0 20px;
+}
+
+.scrollup {
+	position:  fixed;
+	display:  none;
+	top:  75%;
+	right:  5%;
+	width:  64px;
+	height:  64px;
+	margin-top:  -32px;
+	background:  #000;
+	@include borderradius(10px);
+	cursor:  pointer;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	
+	.scroll-triangle {
+		width: 0; 
+		height: 0; 
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-bottom: 12px solid #fff;
+		margin:  24px auto 0 auto;
+	}
 }

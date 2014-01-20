@@ -1,6 +1,344 @@
 /* Tabletsized stylesheets. Call this after desktop and tablet. */
 @media only screen and (max-width: 1000px) {
-	body {
-		margin: 0;
+	
+	@import "global";
+	
+	
+	
+	.primary-header {
+		width: 100%;
+		min-width:  640px;
+		height: 40px;
+		
+		
+		h2 {
+			font-size: 15px;
+			line-height: 40px;
+		}
+		
 	}
+	
+	.arrow-block {
+		position:  absolute;
+		background:  url("../img/arrow-up-right.png") right top no-repeat;
+		margin-top:  -60px;
+		right:  15%;
+	}
+	
+	.content-break {
+		margin-top:  40px;
+	}
+	
+	.content-after-break {
+		padding:  50px 0 0 0!important;
+	}
+	
+	
+	
+	.content-contact {
+		padding:  60px 0 20px 0!important;
+		
+		.triangle {
+			width: 0; 
+			height: 0; 
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 20px solid $white;
+			margin:  -60px auto 40px auto;
+		}
+		
+		.primary-footer {
+			margin:  4em 0 0 0;
+			line-height:  24px;
+			
+			
+			ul.social {
+				margin:  1em 0 0 0;
+				padding:  0;
+				
+				li {
+					display:  inline-block;
+					list-style-type:  none;
+					width:  32px;
+					height:  32px;
+					margin-right:  9px;	
+				}
+				
+				li:last-of-type, li.last {
+					margin-right:  0!important;
+				}
+			}
+		}
+	}
+	
+	.content-block {
+		padding: 80px 0 0px 0;
+		
+		.contact {
+			h2 {
+				font-size:  24px;
+				text-align:  center;
+				margin-bottom: 1em;
+			}
+			
+			@include contactform();
+			
+			.sidebar-form {
+				margin-top:  40px;
+				
+				.col-half {
+					width:  48.4%;
+					margin-right:  3%;
+				}
+			}
+		}
+		
+		
+		.headline {
+			
+			padding-left:  5%;
+			
+			h1 {
+				font-size: 38px;
+				line-height: 50px;
+			}
+			
+			p {
+				font-size: 18px;
+			}
+		}
+		
+		.why-emarketeer {
+			h2 {
+				font-size: 28px;
+				line-height: 36px;
+				text-align:  right;
+			}
+		}
+		
+		.arrow-down {
+			margin:  20px 0;
+			width:  100%;
+			height:  63px;
+			background:  url("../img/arrow-down-left.png") 600px center no-repeat;
+		}
+		
+		.more-clients {
+			text-align:  center;
+			margin:  20px 0 50px 0;
+			
+			h3 {
+				font-size: 24px;
+				margin-bottom:  1em;
+			}
+			
+			img {
+				width:  100%;
+			}
+		}
+		
+		.testimonials {
+			
+		
+			
+			.testimonial-wrapper {
+				margin-top:  40px;
+				height:  190px;
+				overflow:  hidden;
+			}
+			
+			.testimonial {
+				img {
+					@include borderradius(15px);
+					width:  100%;
+				}
+				
+				.description {
+					text-align:  right;
+					font-size:  16px;
+					
+					blockquote {
+						margin:  0;
+						padding-left:  40px;
+						font-style:  italic;
+					}
+					
+				}
+			}
+			
+			.testimonial-control {
+				
+				
+				
+				a {
+					font-size:  82px;
+				}
+				
+			}
+		}
+		
+		.optin-info {
+			
+			h2 {
+				font-size: 26px;
+				line-height: 32px;
+			}
+			
+			p.small {
+				font-size: 11px;
+			}
+			
+			ul {
+				margin: 1em 0;
+				padding:  0;
+				font-size:  16px;
+				
+				li {
+					list-style-type:  none;
+					min-height:  52px;
+					line-height:  20px;
+					padding-left:  60px;
+					background:  url("../img/red-tick.png") left top no-repeat;
+				}
+			}
+			
+			.sidebar-triangle {
+				position:  absolute;
+				width:  0;
+				height:  0;
+				border-top:  15px solid transparent;
+				border-bottom:  15px solid transparent;
+				border-right:  15px solid $grey;
+				z-index:  -1;
+				margin-left:  -15px;
+				margin-top:  50px;
+			}
+			
+			.sidebar-form {
+				padding:  15px;				
+				
+				input, textarea {
+					padding:  0.75em;
+					font-size:  13px;
+				}
+				
+				textarea {
+					height:  160px;
+					resize: none;
+				}
+				
+				input.form-submit {
+					font-size:  14px;
+				}
+				
+				.row {
+					margin-bottom:  1em;
+				}
+				
+				.last-row {
+					margin-bottom:  0;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	strong, b {
+		font-weight:  400!important;
+	}
+	
+	.row {
+		margin-bottom:  1.5em;
+	}
+				
+	.row:last-of-type {
+		margin-bottom:  0;
+	}
+	
+	
+	.red {
+		color: $red;
+	}
+	
+	.col {
+		float: left;
+	}
+	
+	.col-half {
+		width: 47%;
+		margin-right: 6%;
+	}
+	
+	.col-quarter {
+		width:  22%;
+		margin-right:  3%;
+	}
+	
+	.col-three-quarters {
+		width:  73%;
+		margin-left:  2%;
+	}
+	
+	.col-last, .col:last-of-type {
+		margin-right:  0!important;
+	}
+	
+	.col-logo {
+		width: 25%;
+		padding-left: 1%;
+		
+		img {
+			width:  80%;
+			padding-bottom:  50px;
+		}
+		
+	}
+	
+	.col-two-thirds {
+		width: 66%;
+	}
+	
+	.text-right {
+		text-align: right;
+	}
+	
+	.row:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+	
+	.wrapper {
+		width: 90%;
+		margin: 0 auto;
+		padding: 0 5%;
+	}
+	
+	.scrollup {
+		position:  fixed;
+		display:  none;
+		top:  75%;
+		right:  5%;
+		width:  48px;
+		height:  48px;
+		margin-top:  -24px;
+		background:  #000;
+		@include borderradius(7px);
+		cursor:  pointer;
+	
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		filter: alpha(opacity=50);
+		-moz-opacity: 0.5;
+		-khtml-opacity: 0.5;
+		opacity: 0.5;
+		
+		.scroll-triangle {
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid #fff;
+			margin:  18px auto 0 auto;
+		}
+	}
+		
+	
 }

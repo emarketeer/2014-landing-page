@@ -1,0 +1,65 @@
+$grey: #454545;
+$darkgrey: #333;
+$white: #fafafa;
+$red: #d72c30;
+$lightred: #DD3332;
+$darkred: #C52D2C;
+$lightblue: #3287DD;
+$darkblue: #2C78C5;
+
+@mixin fontface-ubuntu($weight) {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: $weight;
+}
+
+@mixin borderradius($size) {
+	-moz-border-radius:  $size;
+	-webkit-border-radius:  $size;
+	border-radius:  $size;
+}
+
+@mixin gradient-background($start,$end) {
+	background: $end;
+	background-image: -ms-linear-gradient(top, $start 0%, $end 100%);
+	background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
+	background-image: -o-linear-gradient(top, $start 0%, $end 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $start), color-stop(1, $end));
+	background-image: -webkit-linear-gradient(top, $start 0%, $end 100%);
+	background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+}
+
+@mixin borderbox() {
+	-moz-box-sizing:  border-box;
+	-webkit-box-sizing:  border-box;
+	box-sizing:  border-box;
+}
+
+@mixin contactform() {
+	
+	input, textarea {
+		background:  #222;
+		border-style:  none;
+		padding:  1em;
+		@include borderbox();
+		display:  block;
+		width:  100%;
+		@include fontface-ubuntu(300);
+		font-size:  16px;
+		color:  $white;
+	}
+	
+	textarea {
+		height:  160px;
+		resize: none;
+	}
+	
+	input.form-submit {
+		@include gradient-background($lightred,$darkred);
+		font-size:  18px;
+		padding: 0.8em;
+	}
+	
+	input.form-submit:hover {
+		@include gradient-background($lightblue,$darkblue);
+	}
+}
