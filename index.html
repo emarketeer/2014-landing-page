@@ -3,21 +3,32 @@
 <head>
 	<meta charset="utf-8">
 	<title>Professional web design in Melbourne | Affordable web design | eMarketeer Australia</title>
-	<meta name="description" content="">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Professional web design in Melbourne from $395.00, affordable web designs by eMarketeer Australia.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="http://www.emarketeer.com.au">
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:400,300" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/normalize.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/tablet.css">
 	<link rel="stylesheet" href="assets/css/mobile.css">
+	<link rel="apple-touch-icon" href="apple-touch-icon-60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144.png">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" href="favicon-32.ico" sizes="32x32">
+	<link rel="icon" href="favicon-256.ico" sizes="256x256">
 	<script src="assets/js/vendor/jquery-1.10.2.min.js"></script>
+	<link rel="author" href="https://plus.google.com/u/0/b/103231043140090169806/103231043140090169806/"/>
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="assets/css/legacy.css">
 	<script src="assets/js/vendor/html5shiv.min.js"></script>
 	<script src="assets/js/vendor/respond.min.js"></script>
 	<script src="assets/js/vendor/old-browser.js"></script>
+	<![endif]-->
+	<!--[if lt IE 10]>
+	<script src="assets/js/vendor/placeholder.js"></script>
 	<![endif]-->
 	<!--
 												>=>                  >=>                               
@@ -29,8 +40,21 @@
 	 >====>   >==>  >>  >=>   >==>>>==> >==>    >=>  >=>  >====>      >=>   >====>    >====>   >==>    		
                                                                                                    
 	-->
+	<script type="text/rocketscript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-33130253-1']);
+	  _gaq.push(['_setDomainName', 'emarketeer.com.au']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 </head>
 <body>
+	<div id="loading" class="loading"></div>
     <div id="scrollup-container" class="scrollup">
 		<div class="scroll-triangle"></div>
 	</div>
@@ -79,24 +103,24 @@
                 </div>
 				<div class="col col-half col-last">
 					<div class="sidebar-triangle"></div>
-					<div class="sidebar-form">
-						<form action="" method="POST">
+					<div class="sidebar-form" data-rel="form-container">
+						<form id="docontact" action="#" method="POST">
 							<div class="row">
-								<input data-rel="contact-input" type="text" name="name" id="form-name" data-input="required" data-id="name" placeholder="Name or business name *" />
+								<input type="text" name="name" id="form-name" data-required="true" data-id="name" data-input="true" data-rel="placeholder" placeholder="Name or business name *" />
 							</div>
 							<div class="row">
 								<div class="col col-half">
-									<input data-rel="contact-input" type="email" name="email" id="form-email" data-input="required" data-id="email" placeholder="Email address *" />
+									<input type="email" name="email" id="form-email" data-required="true" data-id="email" data-input="true" data-rel="placeholder" placeholder="Email address *" />
 								</div>
 								<div class="col col-half col-last">
-									<input data-rel="contact-input" type="phone" name="phone" id="form-phone" data-input="required" data-id="phone" placeholder="Phone number *" />
+									<input type="phone" name="phone" id="form-phone" data-required="true" data-id="phone" data-input="true" data-rel="placeholder" placeholder="Phone number *" />
 								</div>
 							</div>
 							<div class="row">
-								<textarea name="message" data-rel="contact-input" id="form-message" data-id="message" placeholder="Additional notes (E.g Your position in a company, your full name, office locations)"></textarea>
+								<textarea name="message" id="form-message" data-id="message" data-input="true" data-rel="placeholder" placeholder="Additional notes (E.g Your position in a company, your full name, office locations)"></textarea>
 							</div>
 							<div class="row last-row">
-								<input data-rel="contact-input" type="submit" id="form-submit" class="form-submit" data-input="submit" value="Book my free consultation" />
+								<input type="submit" id="form-submit" class="form-submit" data-input="submit" value="Book my free consultation" />
 							</div>
 						</form>
 					</div>
@@ -116,7 +140,7 @@
 			
 			<div id="testimonial-wrapper" class="testimonial-wrapper">
 				
-				<div data-rel="testimonial" class="testimonial" data-rel="testimonial-slide">
+				<div data-rel="testimonial" class="testimonial">
 					<div class="row">
 						<div class="col col-quarter">
 							<img src="assets/img/client-emily-mankey.png" alt="Client Emily" />
@@ -127,14 +151,14 @@
 						</div>
 					</div>
 				</div>
-				<div data-rel="testimonial" class="testimonial" data-rel="testimonial-slide">
+				<div data-rel="testimonial" class="testimonial">
 					<div class="row">
 						<div class="col col-quarter">
 							<img src="assets/img/client-dean-parker.png" alt="Dean Parker" />
 						</div>
 						<div class="col col-three-quarters description">
 							<blockquote>"Having worked with a number of web developers (who seem to be from another planet), it’s refreshing to now have Richard and the eMarketeer team build websites for me. They reply promptly to my calls, make changes as requested, work to timeframes and don't bamboozle me with endless rants of jargon. The websites look great too!"</blockquote>
-							<p><strong>Dean Parker</strong>, Four P's Marketing Solutions.</span></p>
+							<p><strong>Dean Parker</strong>, Four P's Marketing Solutions.</p>
 						</div>
 					</div>
 				</div>
@@ -158,29 +182,27 @@
 		<div class="wrapper contact">
 			<h2>Book your <strong>free</strong>, onsite consultation <strong>instantly</strong> *</h2>
 			<p>Examples of our work, discussion of your website needs, suggested packages and quotation included.</p>
-			<p><small>* Businesses located within 35km radius of Melbourne, Australia.</small</p>
+			<p><small>* Businesses located within 35km radius of Melbourne, Australia.</small></p>
 			<div class="row">
 					<div class="sidebar-triangle"></div>
-					<div class="sidebar-form">
-						<form action="" method="POST">
-							<div class="row">
-								<input data-rel="contact-input" type="text" name="name" id="form-name" data-input="required" data-id="name" placeholder="Name or business name *" />
+					<div class="sidebar-form" data-rel="form-container">
+						<div class="row">
+							<input type="text" name="name" id="form-name-footer" data-id="name" data-input="true" data-rel="placeholder" placeholder="Name or business name *" />
+						</div>
+						<div class="row">
+							<div class="col col-half">
+								<input type="email" name="email" id="form-email-footer" data-id="email" data-input="true" data-rel="placeholder" placeholder="Email address *" />
 							</div>
-							<div class="row">
-								<div class="col col-half">
-									<input data-rel="contact-input" type="email" name="email" id="form-email" data-input="required" data-id="email" placeholder="Email address *" />
-								</div>
-								<div class="col col-half col-last">
-									<input data-rel="contact-input" type="phone" name="phone" id="form-phone" data-input="required" data-id="phone" placeholder="Phone number *" />
-								</div>
+							<div class="col col-half col-last">
+								<input type="phone" name="phone" id="form-phone-footer" data-id="phone" data-input="true" data-rel="placeholder" placeholder="Phone number *" />
 							</div>
-							<div class="row">
-								<textarea name="message" data-rel="contact-input" id="form-message" data-id="message" placeholder="Additional notes (E.g Your position in a company, your full name, office locations)"></textarea>
-							</div>
-							<div class="row">
-								<input data-rel="contact-input" type="submit" id="form-submit" class="form-submit" data-input="submit" value="Book my free consultation" />									
-							</div>
-						</form>
+						</div>
+						<div class="row">
+							<textarea name="message" id="form-message-footer" data-id="message" data-input="true" data-rel="placeholder" placeholder="Additional notes (E.g Your position in a company, your full name, office locations)"></textarea>
+						</div>
+						<div class="row">
+							<input type="submit" id="form-submit-footer" class="form-submit" data-input="submit" value="Book my free consultation" />									
+						</div>
 					</div>
 			</div>
 		</div>
@@ -190,7 +212,7 @@
 					<div class="col col-three-quarters">
 						<h2>About us</h2>
 						<p>eMarketeer Australia is a web design & development company operating from Melbourne, servicing clients in Sydney, Adelaide, Perth, Darwin, Brisbane and New Zealand.</p>
-						<p><strong>Phone</strong>: +61 (03) 9005 5648<br /><strong>Email</strong>: info@emarketeer.com.au</p>
+						<p><strong>Phone</strong>: +61 (03) 9005 5648<br /><strong>Email</strong>: <a href="#" data-rel="email">Please enable javascript to view our email address.</a></p>
 						<p class="copyright">Copyright &copy; 2014 eMarketeer Australia<br />ABN: 76 445 459 132</p>
 					</div>
 					<div class="col col-quarter col-last">
